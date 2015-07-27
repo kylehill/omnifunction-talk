@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Crash Course</title>
+  <link rel="stylesheet" href="prism.css" />
+  <link rel="stylesheet" href="index.css" />
+  
+</head>
+<body>
+  <div id="container">
+  </div>
+
+  <template id="slide-template">
+    {{#if feature}}
+    <div class="slide feature {{slideClass}}">
+      <div class="content">
+        {{#if content}}
+        <div class="text">{{{ content }}}</div>
+        {{/if}}
+
+        {{#if image}}
+        <img src="{{image}}" class="feature-image" />
+        {{/if}}
+      </div>
+    </div>
+    {{else}}
+    <div class="slide {{slideClass}}">
+      {{#if title}}
+      <div class="title">{{{ title }}}</div>
+      {{/if}}
+      <div class="content">
+        <div class="text">{{{ content }}}</div>
+
+        {{#if p}}
+        <div class="text">
+          {{#each p}}
+          <p>{{{ this }}}</p>
+          {{/each}}
+        </div>
+        {{/if}}
+        
+        {{#if ul}}
+        <ul class="list">
+          {{#each ul}}
+          <li class="point">{{{this}}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if code}}
+        <div class="code">
+        <pre><code class="language-javascript">{{#each code}}{{ this }}
+{{/each}}</code></pre>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    {{/if}}
+    </div>
+  </template>
+
+  <script src="libs/jquery.js"></script>
+  <script src="libs/handlebars.js"></script>
+  <script src="libs/underscore.js"></script>
+
+  <script src="slides.js"></script>
+  <script src="index.js"></script>
+
+  <script src="prism.js"></script>
+  
+</body>
+</html>

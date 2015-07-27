@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Demo Page</title>
+  <link href="demo.css" rel="stylesheet" />
+</head>
+<body>
+
+  <button id="my-button">Click me!</button>
+
+  <script>
+    var btn = document.querySelector("#my-button")
+
+    btn.onclick = function() {
+      btn.innerText = "I was clicked!"
+    }
+  </script>
+
+</body>
+</html>
