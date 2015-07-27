@@ -237,6 +237,9 @@ var slides = [
     ]
   },
   {
+    content: "TIL: underscore is not designed well"
+  },
+  {
     title: "_.sample",
     code: [
       "array.reduce(function(mem, item, index, array){",
