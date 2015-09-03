@@ -2,7 +2,7 @@ var slides = [
 
   {
     feature: true,
-    content: "<h1>Reduce Is The Omnifunction</h1>"
+    content: "<h1><em>reduce</em> Is The Omnifunction</h1>"
   },
   {
     p: [
@@ -30,7 +30,133 @@ var slides = [
   },
   {
     feature: true,
-    content: "<h1>Underscore is not actually magic</h1>"
+    image: "meetup.png"
+  },
+  {
+    feature: true,
+    content: "<h2>It went okay!</h2>"
+  },
+  {
+    p: [
+      "(mostly because John-David Dalton spoke for 50 of his allotted 30 minutes)"
+    ]
+  },
+  {
+    feature: true,
+    content: "<h2>Underscore* is not actually magic</h2>"
+  },
+  {
+    p: [
+      "* (or lodash, look, they're functionally the same)"
+    ]
+  },
+  {
+    feature: true,
+    content: "<h2>Understanding <em>Functional Programming</em></h2>"
+  },
+  {
+    feature: true,
+    image: "wiki.png"
+  },
+  {
+    title: "Functional programming is...",
+    ul: [
+      "One of several <em>patterns</em> involving",
+      "a <em>generic</em>, <em>independent</em> iterator function",
+      "executed on <em>each member</em> of a collection (read: array) in order",
+      "which is <em>non-mutative</em>",
+      "that <em>returns a value</em>",
+      "which is pattern-specifically <em>synthesized</em> into a single, returned value"
+    ]
+  },
+  {
+    title: "Functional programming is...",
+    ul: [
+      "One of several <em>patterns</em> involving",
+      "a <em>generic</em>, <em>independent</em> iterator function",
+      "executed on <em>each member</em> of a collection (read: array) in order",
+      "which is <em>non-mutative</em>",
+      "that <em>returns a value</em>",
+      "which is pattern-specifically <em>synthesized</em> into a single, returned value",
+      "(and also there's forEach which only does, like, some of that)"
+    ]
+  },
+  {
+    title: "By example",
+    code: [
+      "var iterator = function() { /* ... */ }",
+      "var array = [ 10, 20, 30, 40 ]",
+      "",
+      "pattern(array, iterator)"
+    ]
+  },
+  {
+    content: "<h2>This requires <em>passing a function as a parameter</em> into another function</h2>"
+  },
+  {
+    title: "JavaScript sucks at a lot of things, like",
+    ul: [
+      "laughable type coercion",
+      "floating point math",
+      "callback function pyramids",
+      "literally anything involving time"
+    ]
+  },
+  {
+    content: "<h2>JS is really good at functional programming</h2>"
+  },
+  {
+    title: "FP foundational patterns",
+    ul: [
+      "<em>map</em> -- returns the array, transformed",
+      "<em>filter</em> -- returns a (usually) smaller array with the same members",
+      "<em>reduce</em> -- returns a single value synthesized from all values in the array"
+    ]
+  },
+  {
+    title: "Foundational patterns - <em>map</em>",
+    code: [
+      "[5, 10, 15].map(function(item){",
+      "  return item * 2",
+      "}) // [10, 20, 30]"
+    ]
+  },
+  {
+    title: "Foundational patterns -- <em>filter</em>",
+    code: [
+      "[5, 10, 15].filter(function(item){",
+      "  return (item % 2 !== 0)",
+      "}) // [5, 15]"
+    ]
+  },
+  {
+    title: "Foundational patterns -- <em>reduce</em>",
+    code: [
+      "[5, 10, 15].reduce(function(memory, item){",
+      "  return memory + item",
+      "}, 0) // 30"
+    ]
+  },
+  {
+    title: "Foundational patterns -- <em>reduce</em>",
+    code: [
+      "[5, 10, 15].reduce(function(memory, item, index, array){",
+      "  return memory + item",
+      "}, 0) // 30"
+    ]
+  },
+  {
+    title: "<em>reduce</em> is special",
+    p: [
+      "The reduce pattern <em>maintains state</em> as it iterates",
+      "The pattern is seeded with a memory value that is passed into the first iteration",
+      "The value returned from each iteration becomes the memory value for the next",
+      "Values can be complex and change types"
+    ]
+  },
+  {
+    title: "<em>reduce</em> is special",
+    content: "<h2>Every other functional programming pattern can be recreated with <em>reduce</em></h2>"
   },
   {
     p: [
